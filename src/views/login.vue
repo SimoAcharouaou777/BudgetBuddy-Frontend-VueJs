@@ -33,6 +33,8 @@
         })
         .then(response => {
           console.log(response.data);
+          localStorage.setItem('token', response.data.token);
+          this.$router.push({name: 'profile'});
         })
         .catch(error => {
           console.log(error);
